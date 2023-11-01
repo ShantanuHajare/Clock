@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock using JavaScript</title>
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+              
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+                <span>:</span>
+                
+                <span id="min">00</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let hour = document.getElementById("hrs");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+  
+        function udpateTime() {
+          let tm = new Date();
+  
+          let hr = tm.getHours();
+          let mn = tm.getMinutes();
+          let sc = tm.getSeconds();
+          hour.innerHTML = hr - 12;
+          min.innerHTML = mn;
+          sec.innerHTML = sc;
+        }
+        setInterval(udpateTime, 1000);
+    </script>
+</body>
+</html>
